@@ -67,7 +67,7 @@ Please follow the instructions below if you want to add new features:
 3) Include the following parameters with default values `feat_integration=True` and `feature_name=None`
 4) If your feature is based on the STFT and you want to allow its usage at different NFFT points you should add these parameters: `nfft=None` and `hop_length=None`. Then you should add this instruction at the beginning of your function `n_fft, hop_length = self.__update_parameters(n_fft, hop_length)`. 
 5) If you want to integrate features from frame-level to clip-level you need to call the function `feature_integration(frames)` where `frames` is a 1D or 2D numpy array depending on your feature (e.g., MFCC would be a 2D numpy array since you have N coefficients for each frame)
-6) Add a new column in `method_args.csv` with the same function name you assigned above (point 2.) e.g.,  `new_feature`
-
+6) Add a new column in `method_args.csv` with the same function_name you assigned above (point 2.) e.g.,  `new_feature`
+7) Add a feature name at the cell [feature_name, function_name] specifying how name that will be assigned in `features.csv`. This example explains the difference between feature name and function name. If you add `def zero_crossing_rate(...)`  then `zero_crossing_rate` is the function name. This will generate two features `mean_zcr` and `var_zcr` which represent features name. In `features.csv` you will find feature_name and not function_name.
 ## Feedback
 Feel free to improve the code and provide feedback. 
