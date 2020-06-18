@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from feature_computation import FeatureExtraction
 import librosa
-import  numpy as np
+import numpy as np
 import click
 
 config = configparser.ConfigParser()
@@ -14,7 +14,7 @@ config_name = 'AUDIO_FEATURE_EXTRACTION'
 @click.option('--nfft', default=1024)
 @click.option('--hop', default=256)
 @click.option('--sr', default=48000)
-def process_features(nfft=1024, hop=256, sr=48000):
+def process_features(nfft, hop, sr):
     # extract path
     feature_path = config[config_name]['features']
     method_args_path = config[config_name]['method_args']
