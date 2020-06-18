@@ -53,7 +53,7 @@ You need to install p.563 https://github.com/qin/p.563
 nfft - Number of DFT points for all the features
   Default value 1024
 hop  - Number of overlapping points when computing the STFT
-  Default value nfft/2
+  Default value 256
  sr  - Sampling rate of the audio files
   Default value 48000 Hz
 ```
