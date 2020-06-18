@@ -1,5 +1,5 @@
 # Audio Feature Extraction
-Audio feature extraction computes typical features used in audio research. The script automatically integrates features from frame-level to clip-level and stores the values in a csv file. The motivation behind this script is that I like to automate boring stuff. 
+Audio feature extraction computes typical features used in audio research. The script automatically integrates features from frame-level to clip-level and stores the values in a csv file. This script is good for automating boring stuff. 
 
 ## Feature List
 The script computes the following features plus some audio quality metrics. For each feature, the actual values and the first order difference (FOD) are computed except where indicated.
@@ -62,12 +62,15 @@ If you need to use a different parameter only for a subset of features you have 
 
 ## Contribution
 Please follow the instructions below if you want to add new features:
-1) Add a function in `feature_computation.py` at the end of the file
-2) Specify a name e.g., `new_feature(self, ...)`
-3) Include the following parameters with default values `feat_integration=True` and `feature_name=None`
-4) If your feature is based on the STFT and you want to allow its usage at different NFFT points you should add these parameters: `nfft=None` and `hop_length=None`. Then you should add this instruction at the beginning of your function `n_fft, hop_length = self.__update_parameters(n_fft, hop_length)`. 
-5) If you want to integrate features from frame-level to clip-level you need to call the function `feature_integration(frames)` where `frames` is a 1D or 2D numpy array depending on your feature (e.g., MFCC would be a 2D numpy array since you have N coefficients for each frame)
-6) Add a new column in `method_args.csv` with the same function_name you assigned above (point 2.) e.g.,  `new_feature`
-7) Add a feature name at the cell [feature_name, function_name] specifying the name that will be assigned in `features.csv`. This example explains the difference between feature name and function name. If you add `def zero_crossing_rate(...)`  then `zero_crossing_rate` is the function name. This will generate two features `mean_zcr` and `var_zcr` which represent features name. In `features.csv` you will find feature_name and not function_name.
+1) Add a function in `feature_computation.py` at the end of the file e.g., `new_feature(self, ...)`
+2) Include the following parameters with default values `feat_integration=True` and `feature_name=None`
+3) Add a new column in `method_args.csv` with the same function_name you assigned above (point 1) e.g.,  `new_feature`
+4) Add a feature name at the cell [feature_name, function_name] specifying the name that will be assigned in `features.csv`. 
+
+*This example explains the difference between feature name and function name. If you add `def zero_crossing_rate(...)`  then `zero_crossing_rate` is the function name. This will generate two features `mean_zcr` and `var_zcr` which represent features name. In `features.csv` you will find feature_name and not the function_name.
+
+*If your feature is based on the STFT and you want to allow its usage at different NFFT points you should add these parameters: `nfft=None` and `hop_length=None`. Then you should add this instruction at the beginning of your function `n_fft, hop_length = self.__update_parameters(n_fft, hop_length)`. 
+
+*If you want to integrate features from frame-level to clip-level you need to call the function `feature_integration(frames)` where `frames` is a 1D or 2D numpy array depending on your feature (e.g., MFCC would be a 2D numpy array since you have N coefficients for each frame)
 ## Feedback
 Feel free to improve the code and provide feedback. 
