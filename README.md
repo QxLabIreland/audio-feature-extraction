@@ -50,7 +50,7 @@ You need to install p.563 https://github.com/qin/p.563
 1) Upload WAV files in the folder `data/waveform`. 
 2) Run `processing.py` specifying 3 parameters:
 ```
-nfft - Number of points of the DFT for all the features
+nfft - Number of DFT points for all the features
   Default value 1024
 hop  - Number of overlapping points when computing the STFT
   Default value nfft/2
