@@ -31,7 +31,7 @@ Zero-Crossing-Rate
 ```
 ### Non-Intrusive Quality Metric (no FOD)
 ```
-Speech To Reverberation Modulation Ratio (SRMR)
+Speech-To-Reverberation Modulation Energy Ratio (SRMR)
 ITU-T P.563
 MOSNet
 ```
