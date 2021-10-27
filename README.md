@@ -1,5 +1,5 @@
 # Audio Feature Extraction
-Audio feature extraction computes typical features used in audio research. The script automatically integrates features from frame-level to clip-level and stores the values in a csv file. This script is good for automating boring stuff. 
+Audio feature extraction computes typical features used in audio research. The script automatically integrates features from frame-level to clip-level and stores the values in a csv file. 
 
 ## Feature List
 The script computes the following features plus some audio quality metrics. For each feature, the actual values and the first order difference (FOD) are computed except where indicated.
