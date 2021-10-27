@@ -60,7 +60,7 @@ hop  - Number of overlapping points when computing the STFT
 The output will be stored in `features.csv` where each cell represents a pair (filename, feature).
 If you need to use a different parameter only for a subset of features you have to modify `method_args.csv`. The file is structured as follows. Each cell in the csv file identifies a pair [parameter, feature]. Just modify/insert a value in the specific cell. This value will be used for that particular feature instead of the value that you pass as argument when calling `processing.py`. Each feature might have specific parameters that are not shared with other features (e.g., for computing MFCC you need to specify the number of coefficients). If you want to modify these parameters you need to follow the same procedure. 
 
-## Contribution
+## Contributing
 Please follow the instructions below if you want to add new features:
 1) Add a function in `feature_computation.py` at the end of the file e.g., `new_feature(self, ...)`
 2) Include the following parameters with default values `feat_integration=True` and `feature_name=None`
